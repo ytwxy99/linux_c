@@ -150,3 +150,31 @@ pi = 3.140000
 i -> 0x16fd4363c, j -> 0x16fd43638, p -> 0x16fd43638 
 p -> 1000, a -> 1000 
 ```
+# 指针数组和数组指针
+```c
+#include <stdio.h>
+
+/*
+ *  数组指针 就是上面章节的 int[3] *p -> int (*p)[3]
+ *  指针数组
+ *     如： int* arr[3] (也可以是 int *[3] arr) -> TYPE NAME; 即每个元素存储的是指针;
+ */
+
+int main(void)
+{
+    char *name[5] = {"Hello", "World", "Great", "Fly", "Computer"}; //这就是指针数据
+    for (int i = 0; i < 5; ++i) {
+        printf("name -> %s\n", *(name + i));
+    }
+
+
+    return 0;
+}
+
+// output
+name -> Hello
+name -> World
+name -> Great
+name -> Fly
+name -> Computer
+```
