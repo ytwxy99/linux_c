@@ -26,10 +26,26 @@ int main(void)
 # 函数与指针
 ## 指针函数
 函数返回的是指针
-如：int * fun(int);
+   返回值 * 函数名 (形参)；
+   如：int * fun(int);
 ## 函数指针
-
-
+指针指向的是函数
+   类型 (*指针名) (形参);
+如：int (*p)(int);
 ```c
+int add(int a, int b)
+{
+    return a + b;
+}
 
+int main()
+{
+    int a = 3, b = 5;
+    //int ret;
+    //ret = add(a, b);
+    int (*p) (int, int);
+    p = add; // 函数名是一段代码所关联的入口地址
+    ret = p(a, b);
+    printf("%d \n", ret);
+}
 ```
