@@ -34,4 +34,3 @@ int main()
 # output
 day is 3
 ```
-##
