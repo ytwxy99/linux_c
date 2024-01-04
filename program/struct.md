@@ -97,3 +97,7 @@ TYPE NAME = VALUE
 指针->成员名
 (*指针).成员名
 ## 占用内存空间大小
+```c
+struct student a;  // 12个字节   如果存储大小小于int型，需要地址偏移来存储，如char占用一个字节，但是在struct中算4个字节来做对齐；
+struct student *p; //指针在64位中占8个字节
+```
