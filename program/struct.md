@@ -186,3 +186,13 @@ int main()
 按照成员类型最大占用空间位union内存大小
 ## 函数传参（值，地址）
 ## 位域
+union
+{
+  struct
+  {
+    char a:1; //指定占用1位（bit）
+    char b:2; //指定占用2位
+    char c:1;
+  }x;
+  int y;
+}u;
