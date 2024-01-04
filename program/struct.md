@@ -101,3 +101,13 @@ TYPE NAME = VALUE
 struct student a;  // 12个字节   如果存储大小小于int型，需要地址偏移来存储，如char占用一个字节，但是在struct中算4个字节来做对齐；
 struct student *p; //指针在64位中占8个字节
 ```
+## 函数传参
+总共有两种：
+  值传递和地址传递
+
+```c
+void func(struct student st)
+{
+  printf("%d\n", sileof(b));
+}
+```
