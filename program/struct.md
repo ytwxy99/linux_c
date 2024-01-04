@@ -106,8 +106,15 @@ struct student *p; //指针在64位中占8个字节
   值传递和地址传递
 
 ```c
+// 值传递
 void func(struct student st)
 {
   printf("%d\n", sileof(b));
+}
+
+// 地址传递
+void func(struct student *p)
+{
+   printf("%d\n", sileof(p));
 }
 ```
