@@ -51,7 +51,13 @@ int main()
   st.id = 2;
 
   struct student_st sst = {1, "Alan", {2011, 11, 11}, 99, 99};
+
   struct student_st sst1 = {.math = 98, .chinese = 97}; //初始化部分成员变量内容
+
+  struct student_st *p = {1, "Alan", {2011, 11, 11}, 99, 99};
+  p->id = 100;
+  p->birth.year = 2022;
+
   st.birth.year = 2023;
   exit(0);
 }
@@ -77,4 +83,6 @@ struct student_st
 ## 定义变量（变量，数组，指针），初始化及成员引用
 TYPE NAME = VALUE
 变量名.成员名
+指针->成员名
+(*指针).成员名
 ## 占用内存空间大小
