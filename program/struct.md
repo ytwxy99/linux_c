@@ -55,10 +55,21 @@ int main()
   struct student_st sst1 = {.math = 98, .chinese = 97}; //初始化部分成员变量内容
 
   struct student_st *p = {1, "Alan", {2011, 11, 11}, 99, 99};
+
+  struct student_st arry[2] = {{1, "Alan", {2011, 11, 11}, 99, 99}, {2, "Jack", {2011, 11, 11}, 99, 99}};
+
   p->id = 100;
   p->birth.year = 2022;
 
   st.birth.year = 2023;
+
+  p = &arry[0];
+
+  for(int i = 0; i < 2; i++, p++)
+  {
+    arry[i].birth.year = 2022;
+    p->birth.year = 2022;
+  }
   exit(0);
 }
 ```
