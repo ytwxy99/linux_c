@@ -136,6 +136,28 @@ void func(struct student *p)
 
 #define NAMESIZE 32
 
+struct tmp_st
+{
+  int i;
+  union
+  {
+    int a;
+    char c;
+  }un;
+
+  float f;
+}
+
+union
+{
+  int a;
+  double d;
+  struct
+  {
+    int arr[10];
+  }st;
+}
+
 union test_un
 {
   int i;
@@ -155,9 +177,12 @@ int main()
 
 ```
 ## 定义变量（变量，数组，指针），初始化及成员引用
+```c
   成员引用: 
     变量名.成员名
     指针名->成员名
+```
 ## 内存空间占用大小
+按照成员类型最大占用空间位union内存大小
 ## 函数传参（值，地址）
 ## 位域
