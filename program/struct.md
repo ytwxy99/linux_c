@@ -51,6 +51,7 @@ int main()
   st.id = 2;
 
   struct student_st sst = {1, "Alan", {2011, 11, 11}, 99, 99};
+  struct student_st sst1 = {.math = 98, .chinese = 97}; //初始化部分成员变量内容
   st.birth.year = 2023;
   exit(0);
 }
