@@ -118,3 +118,43 @@ void func(struct student *p)
    printf("%d\n", sileof(p));
 }
 ```
+# 共用体
+## 产生及意义
+多个成员变量一个时刻只能一个成员在内存存在，一个共用体的大小是最大成员变量类型占用的大小。历史产生原因是当时硬件资源匮乏，节省内存资源；
+## 类型描述
+  union 共用体名
+  {
+    数据类型 成员名1；
+    数据类型 成员名2；
+    ......
+  }
+## 嵌套定义
+共用体和结构体可以相互嵌套
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define NAMESIZE 32
+
+union test_un
+{
+  int i;
+  float f;
+  double d;
+  char ch;
+}
+
+int main()
+{
+  // TYPE NAME = VALUE;
+  union test_un a;
+  a.f = 3.12;
+  printf("%d", a.i); //这里调用是无意义的，是个随机值。
+  exit(0);
+}
+
+```
+## 定义变量（变量，数组，指针），初始化及成员引用
+## 内存空间占用大小
+## 函数传参（值，地址）
+## 位域
