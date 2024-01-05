@@ -21,16 +21,29 @@ int main()
 ## 指针
 技巧  用a 替换 IP/ARR/NODE/NODEP
 ```c
-type def int *IP 
+typedef def int *IP 
 IP a; --> int *a
 
 typedef int ARR[6]; -->  int[6] -> ARR
 ARR a; --> int a[6]
 
-type struct node_st NODE;
+typedef struct node_st NODE;
 NODE a; ---> struct node_st a;
+等价：
+typedef struct
+{
+  int i;
+  float f;
+}NODE;
 
-type struct node_st *NODEP;
+typedef struct node_st *NODEP;
 NODEP a; ---> struct node_st *a;
+
+typedef int FUNC(int);
+FUNC f; --> int f(int);
+
+
+typedef int *FUNCP(int);
+FUNCP pp ---> int *p(int);
 ```
 
