@@ -38,3 +38,24 @@ clean:
 ```
 make
 make clean --> clean:
+
+## makefile 重构
+```c
+CC=gcc
+CFLAGS+=-c -Wall -g
+
+mytool:$(OBJS)
+	$(CC) ${OBJS} -o mytool
+
+main.o:main.c
+	$(CC) main.c $(CFLAGS) -o main.o
+
+tool1.o:tool1.c
+	$(CC) tool1.c $(CFLAGS) -o tool1.o
+
+tool2.o:tool2.c
+	$(CC) tool2.c $(CFLAGS) -o tool2.o
+
+clean:
+	${RM} -r *.o mytool  # RM == rm -f
+```
