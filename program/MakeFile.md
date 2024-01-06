@@ -18,6 +18,19 @@ tool1.o 依赖 tool1.c
 tool2.o 依赖 tool2.c
 
 makefile就是维护上面的依赖关系
-
-
 ```
+###makefile
+```shell
+mytool:main.o tool1.o tool2.o
+	gcc main.o tool1.o tool2.o -o mytool
+
+main.o:main.c
+	gcc main.c -c -Wall -g -o main.o
+
+tool1.o:tool1.c
+	gcc tool1.c -c -Wall -g -o tool1.o
+
+tool2.o:tool2.c
+	gcc tool2.c -c -Wall -g -o tool2.o
+```
+make
