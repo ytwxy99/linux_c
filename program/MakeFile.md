@@ -32,5 +32,9 @@ tool1.o:tool1.c
 
 tool2.o:tool2.c
 	gcc tool2.c -c -Wall -g -o tool2.o
+
+clean:
+	rm -rf *.o mytool
 ```
 make
+make clean --> clean:
