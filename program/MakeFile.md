@@ -59,3 +59,41 @@ tool2.o:tool2.c
 clean:
 	${RM} -r *.o mytool  # RM == rm -f
 ```
+```c
+OBJS=main.o tool1.o tool2.o
+CC=gcc
+CFLAGS+=-c -Wall -g
+
+mytool:$(OBJS)
+	$(CC) $^ -o $@
+
+main.o:main.c
+	$(CC) $^ $(CFLAGS) -o $@
+
+tool1.o:tool1.c
+	$(CC) $^ $(CFLAGS) -o $@
+
+tool2.o:tool2.c
+	$(CC) $^ $(CFLAGS) -o $@
+
+clean:
+	${RM} -r *.o mytool
+
+main.o:main.c 对应  $@ $^
+```
+```c
+OBJS=main.o tool1.o tool2.o
+CC=gcc
+CFLAGS+=-c -Wall -g
+
+mytool:$(OBJS)
+	$(CC) $^ -o $@
+
+%.o:%.c
+	$(CC) $^ $(CFLAGS) -o $@
+
+clean:
+	${RM} -r *.o mytool
+
+# % 代表$(OBJS)的前缀名字
+```
